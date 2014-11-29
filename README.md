@@ -34,7 +34,8 @@ array(
 
 ## Publish configuration
 
-`php config:publis inakianduaga/laravel-html-builder-extensions --path vendor/inakianduaga/laravel-html-builder-extensions/src/Config`
+In the laravel installation root folder, run
+`php artisan config:publis inakianduaga/laravel-html-builder-extensions --path vendor/inakianduaga/laravel-html-builder-extensions/src/Config`
 
 You can then modify the initial values in `app/config/packages/inakianduaga/laravel-html-builder-extensions/config.php`
 
