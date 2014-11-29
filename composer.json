@@ -1,0 +1,25 @@
+{
+    "name": "inakianduaga/laravel-htmlbuilder-extensions",
+    "description": "Extendes Laravel Html builder functionality",
+    "keywords": ["html builder"],
+    "license" : "MIT",
+    "authors": [
+        {
+            "name": "Inaki Anduaga",
+            "email": "inaki.anduaga@tado.com"
+        }
+    ],
+    "support" : {
+        "issues" : "https://github.com/inakianduaga/laravel-html-builder-extension/issues"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support" : "4.2.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "InakiAnduaga\\LaravelHtmlBuilderExtensions\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
