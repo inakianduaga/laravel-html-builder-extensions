@@ -1,8 +1,14 @@
 <?php namespace InakiAnduaga\LaravelHtmlBuilderExtensions\Url;
 
 use Illuminate\Routing\UrlGenerator as LaravelUrlGenerator;
+use Illuminate\Http\Request;
+use Illuminate\Routing\RouteCollection;
+
 use Illuminate\Config\Repository as Config;
 
+/**
+ * Extended UrlGenerator
+ */
 class UrlGenerator extends LaravelUrlGenerator {
 
     /**
@@ -17,7 +23,7 @@ class UrlGenerator extends LaravelUrlGenerator {
         if ($this->isValidUrl($path)) return $path;
 
         //Get redirection config for this url
-        $redirector = $this->getRedirectorConfigByAssetExtension($this->getFilepathExtension($url));
+        $redirector = $this->getRedirectorConfigByAssetExtension($this->getFilepathExtension($path));
 
         // Once we get the root URL, we will check to see if it contains an index.php
         // file in the paths. If it does, we will remove it since it is not needed
