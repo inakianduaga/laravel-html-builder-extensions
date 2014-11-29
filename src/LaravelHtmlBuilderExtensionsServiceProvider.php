@@ -1,10 +1,7 @@
 <?php namespace InakiAnduaga\LaravelHtmlBuilderExtensionsServiceProvider;
 
-use Illuminate\Support\ServiceProvider;
-use Tado\Emails\Console\ProcessEmailMigrationCommand;
-use Tado\Emails\Console\ProcessEmailQueueCommand;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config;
+use InakiAnduaga\LaravelHtmlBuilderExtensions\Html\HtmlBuilder;
 
 class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
 
@@ -21,7 +18,8 @@ class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        $this -> package('inakianduaga/laravel-html-builder-extensions');
+
+        $this->package('inakianduaga/laravel-html-builder-extensions');
     }
 
     /**
@@ -30,6 +28,22 @@ class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
+        $this->registerHtmlBuilder();
+    }
+
+    /**
+     * Register the HTML builder instance.
+     * This binds the 'html' reference in the IoC container to the package implementation.
+     * Laravel's HTML Facade will automatically use this when being called
+     *
+     * @return void
+     */
+    protected function registerHtmlBuilder()
+    {
+        $this->app->bindShared('html', function($app)
+        {
+            return new app(HtmlBuilder::class);
+        });
     }
 
 }
