@@ -1,5 +1,5 @@
 {
-    "name": "inakianduaga/laravel-htmlbuilder-extensions",
+    "name": "inakianduaga/laravel-html-builder-extensions",
     "description": "Extendes Laravel Html builder functionality",
     "keywords": ["html builder"],
     "license" : "MIT",
