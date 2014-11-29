@@ -14,35 +14,32 @@ return array(
 
     'redirector' => array(
         'images' => array(
-            'enabled'  => true,
-            'endpoint' => 'd324tgzfocpwne.cloudfront.net',
-            'type'     => array(
-                'jpg'  => true,
-                'png'  => true,
-                'gif'  => true,
-                'js'   => true,
-                'css'  => true,
-                'pdf'  => true,
-                'mp4'  => true,
-                'webm' => true,
-                'svg'  => true,
+            'enabled'      => true,
+            'endpoint'     => 'd324tgzfocpwne.cloudfront.net',
+            'allowedTypes' => array(
+                'jpg',
+                'png',
+                'gif',
+                'pdf',
+                'mp4',
+                'webm',
+                'svg',
                 //Fonts (enable x-domain headers for these to work)
-                'eot'  => true,
-                'woff' => true,
-                'ttf'  => true,
-                'svg'  => true,
+                'eot',
+                'woff',
+                'ttf',
+                'svg',
             ),
         ),
         'styles' => array(
             'enabled'  => true,
             'endpoint' => 'd324tgzfocpwne.cloudfront.net',
         ),
-        'js'     => array(
+        'scripts'     => array(
             'enabled'  => true,
             'endpoint' => 'd324tgzfocpwne.cloudfront.net',
         ),
     ),
-
     /*
     |--------------------------------------------------------------------------
     | Image Lazy Loading
@@ -56,9 +53,12 @@ return array(
         'enabled'           => true,
         'class'             => 'lazy',
         'dataAttribute'     => 'source',
-        'placeholder_image' => '/img/transparent.gif', //1x1 pixel image
-        'timeoutTriggerAll' => 4000, //this is either false or a number (in ms) that we wait to trigger and load all images
-        'threshold'         => 600, //make the images preload when they are within this many pixels below the active viewport
+        'placeholder_image' => '/img/transparent.gif',
+        //1x1 pixel image
+        'timeoutTriggerAll' => 4000,
+        //this is either false or a number (in ms) that we wait to trigger and load all images
+        'threshold'         => 600,
+        //make the images preload when they are within this many pixels below the active viewport
     ),
 
 

@@ -25,7 +25,8 @@
     },
     "autoload": {
         "psr-4": {
-            "InakiAnduaga\\LaravelHtmlBuilderExtensions\\": "src/"
+            "InakiAnduaga\\LaravelHtmlBuilderExtensions\\": "src/",
+            "InakiAnduaga\\LaravelHtmlBuilderExtensions\\Tests\\": "tests/src/"
         }
     },
     "minimum-stability": "dev"

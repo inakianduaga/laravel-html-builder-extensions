@@ -69,7 +69,8 @@
     <testsuites>
 
         <testsuite name="HtmlExtensions">
-            <directory>./tests</directory>
+            <directory>./tests/src/Html</directory>
+            <directory>./tests/src/Url</directory>
         </testsuite>
 
     </testsuites>
