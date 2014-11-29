@@ -1,4 +1,4 @@
-<?php namespace InakiAnduaga\LaravelHtmlBuilderExtensionsServiceProvider;
+<?php namespace InakiAnduaga\LaravelHtmlBuilderExtensions;
 
 use Illuminate\Support\Facades\App;
 use InakiAnduaga\LaravelHtmlBuilderExtensions\Html\HtmlBuilder;

@@ -29,7 +29,7 @@ array(
     'providers' => array(
        ...
     // 'Illuminate\Html\HtmlServiceProvider', //remove this line
-       'InakiAnduaga\LaravelHtmlBuilderExtensions', //add this one
+       'InakiAnduaga\LaravelHtmlBuilderExtensions\LaravelHtmlBuilderExtensionsServiceProvider', //add this one
     )
 )
 ```
