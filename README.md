@@ -1,7 +1,7 @@
 laravel-html-builder-extensions
 ===============================
 
-Extendes Laravel Html builder functionality
+Extendes Laravel Html builder functionality, providing configuration-based automatic external url redirection to serve assets from CDNs
 
 # Installation
 
@@ -15,7 +15,11 @@ In your `composer.json` file, include
     },
 ```
 
-and then run `composer update --no-scripts inakianduaga/laravel-html-builder-extensions` to install the package
+and then run
+
+`composer update --no-scripts inakianduaga/laravel-html-builder-extensions`
+
+to install the package
 
 ### Register package in the laravel application
 
@@ -38,25 +42,27 @@ array(
 ### Publish package configuration
 
 In the laravel installation root folder, run
+
 `php artisan config:publis inakianduaga/laravel-html-builder-extensions`
 
 You can then modify the example values in the file `app/config/packages/inakianduaga/laravel-html-builder-extensions/config.php`
 
-#### Assets Redirection (CDNs)
+** Configure Assets Redirection (CDNs) **
 
 - Script, styles and images can be redirected through an external url individually, see configuration
 - Image redirection is enabled by file extension, so you can skip redirecting certain images
 
 
-#### Image lazy loading
+** Configure Image lazy loading **
 
-TODO
+@TODO
 
 # Usage:
 
 Usage is the same as the native laravel HTML builder, for example
+
 ```php
-{{ HTML::image('src', 'alt', array) }}
+{{ HTML::image('src', 'alt', options) }}
 {{ HTML::styles('src') }}
 {{ HTML::scripts('src') }}
 ```
