@@ -47,13 +47,13 @@ In the laravel installation root folder, run
 
 You can then modify the example values in the file `app/config/packages/inakianduaga/laravel-html-builder-extensions/config.php`
 
-** Configure Assets Redirection (CDNs) **
+**Configure Assets Redirection (CDNs)**
 
 - Script, styles and images can be redirected through an external url individually, see configuration
 - Image redirection is enabled by file extension, so you can skip redirecting certain images
 
 
-** Configure Image lazy loading **
+**Configure Image lazy loading**
 
 @TODO
 
