@@ -1,34 +1,28 @@
-<?php namespace InakiAnduaga\LaravelHtmlBuilderExtensionsServiceProvider;
+<?php namespace InakiAnduaga\LaravelHtmlBuilderExtensions;
+
+use InakiAnduaga\LaravelHtmlBuilderExtensions\Html\HtmlBuilder;
+use InakiAnduaga\LaravelHtmlBuilderExtensions\Url\UrlGenerator;
 
 use Illuminate\Support\Facades\App;
-use InakiAnduaga\LaravelHtmlBuilderExtensions\Html\HtmlBuilder;
+use Illuminate\Html\HtmlServiceProvider;
 
-class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
-
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
+class LaravelHtmlBuilderExtensionsServiceProvider extends HtmlServiceProvider {
 
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
 
-        $this->package('inakianduaga/laravel-html-builder-extensions');
-    }
+        //https://coderwall.com/p/svocrg/configurations-and-namespaces-in-package-development-for-laravel
+        //https://github.com/laravel/framework/issues/3505
+        //Note: The package method automatically searches for a configuration based on assuming a relationship between this
+        //      file location and the root of the package (since it assumes PSR-0, the root is normally 3 levels down).
+        //      We override this by telling the root of the installation is on this folder
+        $this->package('inakianduaga/laravel-html-builder-extensions', null, __DIR__ );
 
-    /**
-     * Register the service provider - This runs before the boot() method
-     *
-     * @return void
-     */
-    public function register() {
-        $this->registerHtmlBuilder();
     }
 
     /**
@@ -42,7 +36,9 @@ class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
     {
         $this->app->bindShared('html', function($app)
         {
-            return new app(HtmlBuilder::class);
+            $urlGenerator = App::make(UrlGenerator::class);
+
+            return new HtmlBuilder($urlGenerator);
         });
     }
 

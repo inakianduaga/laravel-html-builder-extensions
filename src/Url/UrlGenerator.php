@@ -29,7 +29,7 @@ class UrlGenerator extends LaravelUrlGenerator {
         // file in the paths. If it does, we will remove it since it is not needed
         // for asset paths, but only for routes to endpoints in the application.
         if($redirector['enabled']) {
-            $root = $this->getRootUrl($this->getScheme($secure), $redirector['endpoint']);
+            $root = $this->getRootUrl($this->getScheme($secure), $this->getScheme($secure).$redirector['endpoint']);
         } else {
             $root = $this->getRootUrl($this->getScheme($secure));
         }
@@ -48,9 +48,9 @@ class UrlGenerator extends LaravelUrlGenerator {
     {
         $pathParts = pathinfo($filePath);
 
-        return $pathParts['extension'];
-    }
+        return !empty($pathParts['extension']) ? $pathParts['extension'] : '';
 
+    }
 
     /**
      * Determines whether redirection should be enabled by extension

@@ -2,7 +2,6 @@
 
 use Illuminate\Html\HtmlBuilder as LaravelHtmlBuilder;
 use InakiAnduaga\LaravelHtmlBuilderExtensions\Url\UrlGenerator;
-use Illuminate\Config\Repository as Config;
 
 class HtmlBuilder extends LaravelHtmlBuilder {
 
@@ -10,12 +9,10 @@ class HtmlBuilder extends LaravelHtmlBuilder {
      * Create a new HTML builder instance.
      *
      * @param  UrlGenerator  $url
-     * @param  Config  $config
      */
-    public function __construct(UrlGenerator $url = null, Config $config)
+    public function __construct(UrlGenerator $url = null)
     {
         $this->url = $url;
-        $this->config = $config;
     }
 
 //    /**

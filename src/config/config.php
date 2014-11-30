@@ -15,7 +15,7 @@ return array(
     'redirector' => array(
         'images' => array(
             'enabled'      => true,
-            'endpoint'     => 'd324tgzfocpwne.cloudfront.net',
+            'endpoint'     => 'xxx.cloudfront.net',
             'allowedTypes' => array(
                 'jpg',
                 'png',
@@ -33,11 +33,11 @@ return array(
         ),
         'styles' => array(
             'enabled'  => true,
-            'endpoint' => 'd324tgzfocpwne.cloudfront.net',
+            'endpoint' => 'xxx.cloudfront.net',
         ),
         'scripts'     => array(
             'enabled'  => true,
-            'endpoint' => 'd324tgzfocpwne.cloudfront.net',
+            'endpoint' => 'xxx.cloudfront.net',
         ),
     ),
     /*
