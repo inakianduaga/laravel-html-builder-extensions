@@ -38,7 +38,7 @@ array(
 ### Publish package configuration
 
 In the laravel installation root folder, run
-`php artisan config:publis inakianduaga/laravel-html-builder-extensions --path vendor/inakianduaga/laravel-html-builder-extensions/src/Config`
+`php artisan config:publis inakianduaga/laravel-html-builder-extensions`
 
 You can then modify the example values in the file `app/config/packages/inakianduaga/laravel-html-builder-extensions/config.php`
 

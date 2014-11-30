@@ -13,11 +13,15 @@ class LaravelHtmlBuilderExtensionsServiceProvider extends HtmlServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
 
         //https://coderwall.com/p/svocrg/configurations-and-namespaces-in-package-development-for-laravel
         //https://github.com/laravel/framework/issues/3505
-        $this->package('inakianduaga/laravel-html-builder-extensions');
+        //Note: The package method automatically searches for a configuration based on assuming a relationship between this
+        //      file location and the root of the package (since it assumes PSR-0, the root is normally 3 levels down).
+        //      We override this by telling the root of the installation is on this folder
+        $this->package('inakianduaga/laravel-html-builder-extensions', null, __DIR__ );
 
     }
 
