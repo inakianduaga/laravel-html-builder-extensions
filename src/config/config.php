@@ -13,6 +13,9 @@ return array(
     */
 
     'redirector' => array(
+
+        'globalDisable' => false, //Flag to disable redirection for all types
+
         'images' => array(
             'enabled'      => true,
             'endpoint'     => 'xxx.cloudfront.net',
@@ -31,10 +34,12 @@ return array(
                 'svg',
             ),
         ),
+
         'styles' => array(
             'enabled'  => true,
             'endpoint' => 'xxx.cloudfront.net',
         ),
+
         'scripts'     => array(
             'enabled'  => true,
             'endpoint' => 'xxx.cloudfront.net',

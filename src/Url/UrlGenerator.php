@@ -63,7 +63,7 @@ class UrlGenerator extends LaravelUrlGenerator {
         $configuration = app(Config::class)->get('laravel-html-builder-extensions::config.redirector');
 
         $out = array(
-            'enabled' => true,
+            'enabled' => $configuration['globalDisable'] ? false : true,
             'endpoint' => null,
         );
 
