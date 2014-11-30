@@ -1,16 +1,12 @@
 <?php namespace InakiAnduaga\LaravelHtmlBuilderExtensions;
 
-use Illuminate\Support\Facades\App;
 use InakiAnduaga\LaravelHtmlBuilderExtensions\Html\HtmlBuilder;
+use InakiAnduaga\LaravelHtmlBuilderExtensions\Url\UrlGenerator;
 
-class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
+use Illuminate\Support\Facades\App;
+use Illuminate\Html\HtmlServiceProvider;
 
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
+class LaravelHtmlBuilderExtensionsServiceProvider extends HtmlServiceProvider {
 
     /**
      * Bootstrap the application events.
@@ -19,16 +15,10 @@ class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
+        //https://coderwall.com/p/svocrg/configurations-and-namespaces-in-package-development-for-laravel
+        //https://github.com/laravel/framework/issues/3505
         $this->package('inakianduaga/laravel-html-builder-extensions');
-    }
 
-    /**
-     * Register the service provider - This runs before the boot() method
-     *
-     * @return void
-     */
-    public function register() {
-        $this->registerHtmlBuilder();
     }
 
     /**
@@ -42,7 +32,9 @@ class LaravelHtmlBuilderExtensionsServiceProvider extends ServiceProvider {
     {
         $this->app->bindShared('html', function($app)
         {
-            return new app(HtmlBuilder::class);
+            $urlGenerator = App::make(UrlGenerator::class);
+
+            return new HtmlBuilder($urlGenerator);
         });
     }
 

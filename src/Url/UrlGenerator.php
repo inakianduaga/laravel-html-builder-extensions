@@ -48,9 +48,9 @@ class UrlGenerator extends LaravelUrlGenerator {
     {
         $pathParts = pathinfo($filePath);
 
-        return $pathParts['extension'];
-    }
+        return !empty($pathParts['extension']) ? $pathParts['extension'] : '';
 
+    }
 
     /**
      * Determines whether redirection should be enabled by extension
